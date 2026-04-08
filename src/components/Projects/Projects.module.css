@@ -1,0 +1,139 @@
+.grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   24px;
+}
+
+/* ── Card ── */
+.card {
+  border:        1px solid var(--border);
+  border-radius: 20px;
+  background:    var(--bg-card);
+  overflow:      hidden;
+  transition:    all 0.4s var(--ease);
+  cursor:        pointer;
+  position:      relative;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  transform:    translateY(-4px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(51, 170, 255, 0.06);
+}
+
+.cardFeatured {
+  grid-column: span 2;
+}
+
+/* ── Visual header ── */
+.visual {
+  height:   200px;
+  position: relative;
+  overflow: hidden;
+  display:  flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.visualFeatured { height: 260px; }
+
+.visualBg {
+  position:   absolute;
+  inset:      0;
+  transition: transform 0.6s var(--ease);
+  display:    flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.card:hover .visualBg { transform: scale(1.04); }
+
+.emoji {
+  font-size: 72px;
+  opacity:   0.55;
+  pointer-events: none;
+  user-select: none;
+}
+
+.visualFeatured .emoji { font-size: 90px; }
+
+.visualOverlay {
+  position:   absolute;
+  inset:      0;
+  background: linear-gradient(180deg, transparent 40%, var(--bg-card) 100%);
+}
+
+/* ── Badge ── */
+.badge {
+  position:      absolute;
+  top:           16px;
+  left:          16px;
+  padding:       5px 12px;
+  border-radius: 50px;
+  font-size:     11px;
+  font-weight:   600;
+  font-family:   var(--font-mono);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Body ── */
+.body {
+  padding: 24px 28px 28px;
+}
+
+.title {
+  font-family:    var(--font-display);
+  font-size:      20px;
+  font-weight:    800;
+  letter-spacing: -0.5px;
+  margin-bottom:  10px;
+}
+
+.desc {
+  font-size:     14px;
+  color:         var(--text-dim);
+  line-height:   1.6;
+  margin-bottom: 20px;
+  font-weight:   300;
+}
+
+.tags {
+  display:       flex;
+  flex-wrap:     wrap;
+  gap:           8px;
+  margin-bottom: 20px;
+}
+
+/* ── Links ── */
+.links {
+  display: flex;
+  gap:     12px;
+}
+
+.link {
+  display:     inline-flex;
+  align-items: center;
+  gap:         6px;
+  font-size:   12px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  transition:  opacity 0.2s;
+  letter-spacing: 0.3px;
+  background:  none;
+  border:      none;
+  cursor:      pointer;
+  padding:     0;
+}
+
+.link:hover { opacity: 0.65; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid         { grid-template-columns: 1fr; }
+  .cardFeatured { grid-column: span 1; }
+  .visualFeatured { height: 200px; }
+}

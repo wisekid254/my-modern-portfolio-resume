@@ -1,0 +1,100 @@
+.grid {
+  display:             grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                 80px;
+  align-items:         start;
+}
+
+/* ── Story text ── */
+.text p {
+  color:         var(--text-mid);
+  font-weight:   300;
+  line-height:   1.8;
+  font-size:     16px;
+  margin-bottom: 20px;
+}
+
+.text p strong {
+  color:       var(--text);
+  font-weight: 500;
+}
+
+/* ── Highlights ── */
+.highlights {
+  margin-top:      36px;
+  display:         flex;
+  flex-direction:  column;
+  gap:             12px;
+}
+
+.highlightRow {
+  display:     flex;
+  align-items: center;
+  gap:         12px;
+  font-size:   14px;
+  color:       var(--text-mid);
+}
+
+.dot {
+  width:         6px;
+  height:        6px;
+  border-radius: 50%;
+  background:    var(--accent);
+  flex-shrink:   0;
+}
+
+/* ── Value cards ── */
+.cards {
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+}
+
+.card {
+  padding:    24px 28px;
+  border:     1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: all 0.3s var(--ease);
+  position:   relative;
+  overflow:   hidden;
+}
+
+.card::before {
+  content:   '';
+  position:  absolute;
+  top: 0; left: 0;
+  width:     3px;
+  height:    100%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  opacity:   0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  transform:    translateX(4px);
+}
+
+.card:hover::before { opacity: 1; }
+
+.cardIcon  { font-size: 24px; margin-bottom: 10px; }
+
+.cardTitle {
+  font-family:   var(--font-display);
+  font-size:     16px;
+  font-weight:   700;
+  margin-bottom: 6px;
+}
+
+.cardText {
+  font-size:   14px;
+  color:       var(--text-dim);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}

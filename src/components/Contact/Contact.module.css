@@ -1,0 +1,204 @@
+/* ── Availability banner ── */
+.banner {
+  background: linear-gradient(135deg, rgba(51,170,255,0.08), rgba(167,139,250,0.06));
+  border:        1px solid rgba(51, 170, 255, 0.15);
+  border-radius: var(--radius);
+  padding:       28px 36px;
+  display:       flex;
+  align-items:   center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  flex-wrap:     wrap;
+  gap:           20px;
+}
+
+.bannerText {
+  font-size:   16px;
+  color:       var(--text-mid);
+  font-weight: 300;
+}
+
+.bannerText strong {
+  color:       var(--text);
+  font-weight: 600;
+}
+
+.availBadge {
+  display:       flex;
+  align-items:   center;
+  gap:           8px;
+  padding:       8px 18px;
+  border:        1px solid var(--green);
+  border-radius: 50px;
+  font-size:     13px;
+  color:         var(--green);
+  font-family:   var(--font-mono);
+  font-weight:   500;
+  white-space:   nowrap;
+}
+
+.availDot {
+  width:         8px;
+  height:        8px;
+  border-radius: 50%;
+  background:    var(--green);
+  box-shadow:    0 0 8px var(--green);
+  animation:     pulse 2s infinite;
+}
+
+/* ── Layout ── */
+.wrap {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   80px;
+  align-items:           start;
+}
+
+/* ── Contact methods ── */
+.methods {
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+}
+
+.method {
+  display:       flex;
+  align-items:   center;
+  gap:           16px;
+  padding:       18px 22px;
+  border:        1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background:    var(--bg-card);
+  text-decoration: none;
+  color:         var(--text);
+  transition:    all 0.3s var(--ease);
+}
+
+.method:hover {
+  border-color: var(--border-hover);
+  transform:    translateX(4px);
+}
+
+.methodIcon {
+  width:         40px;
+  height:        40px;
+  border-radius: 10px;
+  background:    var(--accent-glow);
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+  font-size:     18px;
+  flex-shrink:   0;
+}
+
+.methodLabel {
+  font-size:      11px;
+  color:          var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family:    var(--font-mono);
+  margin-bottom:  2px;
+}
+
+.methodValue {
+  font-size:   14px;
+  font-weight: 500;
+}
+
+/* ── Form ── */
+.form {
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+}
+
+.formRow {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   16px;
+}
+
+.formGroup {
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+}
+
+.label {
+  font-size:      12px;
+  font-weight:    500;
+  color:          var(--text-dim);
+  letter-spacing: 0.5px;
+  font-family:    var(--font-mono);
+  text-transform: uppercase;
+}
+
+.input,
+.textarea {
+  padding:       14px 18px;
+  border:        1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background:    var(--bg-card);
+  color:         var(--text);
+  font-size:     14px;
+  font-weight:   400;
+  font-family:   var(--font-body);
+  outline:       none;
+  transition:    border-color 0.2s, box-shadow 0.2s;
+  resize:        none;
+  width:         100%;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent);
+  box-shadow:   0 0 0 3px var(--accent-glow);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-dim);
+}
+
+/* ── Submit ── */
+.submit {
+  padding:       16px 32px;
+  background:    linear-gradient(135deg, var(--accent), #5b9fff);
+  color:         var(--bg);
+  border:        none;
+  border-radius: var(--radius-sm);
+  font-size:     14px;
+  font-weight:   700;
+  font-family:   var(--font-body);
+  cursor:        pointer;
+  transition:    all 0.3s var(--ease);
+  letter-spacing: 0.3px;
+}
+
+.submit:hover:not(:disabled) {
+  transform:  translateY(-2px);
+  box-shadow: 0 8px 32px rgba(51, 170, 255, 0.35);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor:  not-allowed;
+}
+
+/* ── Success ── */
+.successMsg {
+  padding:       16px;
+  background:    rgba(52, 211, 153, 0.1);
+  border:        1px solid rgba(52, 211, 153, 0.3);
+  border-radius: var(--radius-sm);
+  color:         var(--green);
+  font-size:     14px;
+  font-family:   var(--font-mono);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .wrap    { grid-template-columns: 1fr; gap: 48px; }
+  .formRow { grid-template-columns: 1fr; }
+  .banner  { padding: 20px; }
+}

@@ -1,0 +1,78 @@
+.grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   20px;
+}
+
+/* ── Card ── */
+.card {
+  padding:    28px;
+  border:     1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: all 0.3s var(--ease);
+  display:    flex;
+  flex-direction: column;
+}
+
+.card:hover { border-color: var(--border-hover); }
+
+/* ── Quote mark ── */
+.quote {
+  font-family: var(--font-display);
+  font-size:   40px;
+  color:       var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+  opacity:     0.7;
+}
+
+/* ── Body ── */
+.text {
+  font-size:     14px;
+  color:         var(--text-mid);
+  line-height:   1.75;
+  font-weight:   300;
+  font-style:    italic;
+  margin-bottom: 24px;
+  flex:          1;
+}
+
+/* ── Author ── */
+.author {
+  display:     flex;
+  align-items: center;
+  gap:         12px;
+  margin-top:  auto;
+}
+
+.avatar {
+  width:        40px;
+  height:       40px;
+  border-radius: 50%;
+  background:   linear-gradient(135deg, var(--accent), var(--accent-2));
+  display:      flex;
+  align-items:  center;
+  justify-content: center;
+  font-weight:  700;
+  font-size:    14px;
+  color:        var(--bg);
+  font-family:  var(--font-display);
+  flex-shrink:  0;
+}
+
+.name {
+  font-size:   14px;
+  font-weight: 600;
+}
+
+.role {
+  font-size: 12px;
+  color:     var(--text-dim);
+  margin-top: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

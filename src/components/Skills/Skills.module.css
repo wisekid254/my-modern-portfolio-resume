@@ -1,0 +1,77 @@
+.cols {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   24px;
+}
+
+/* ── Group card ── */
+.group {
+  padding:    28px;
+  border:     1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: all 0.3s var(--ease);
+}
+
+.group:hover {
+  border-color: var(--border-hover);
+  background:   rgba(51, 170, 255, 0.04);
+}
+
+/* ── Group title ── */
+.groupTitle {
+  font-family:    var(--font-mono);
+  font-size:      11px;
+  font-weight:    500;
+  color:          var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom:  20px;
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+}
+
+.groupTitle::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: var(--border);
+}
+
+/* ── Skill row ── */
+.item {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   14px;
+}
+
+.item:last-child { margin-bottom: 0; }
+
+.name {
+  font-size:   13px;
+  font-weight: 500;
+  color:       var(--text-mid);
+}
+
+/* ── Skill bar ── */
+.barWrap {
+  width:         80px;
+  height:        3px;
+  background:    var(--border);
+  border-radius: 2px;
+  overflow:      hidden;
+}
+
+.barFill {
+  height:        100%;
+  border-radius: 2px;
+  background:    linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition:    width 1.2s var(--ease);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cols { grid-template-columns: 1fr; }
+}
