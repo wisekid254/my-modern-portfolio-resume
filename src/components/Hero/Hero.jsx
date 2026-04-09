@@ -27,7 +27,8 @@ export default function Hero({ onContactClick }) {
 
           <p className={styles.sub}>
             Fullstack engineer crafting high-performance web apps, SaaS
-            products, and digital experiences for global teams.{" "}
+            products, and digital experiences, aspirations in{" "}
+            <h2>Data Science and Machine Learning</h2>for global teams.{" "}
             <strong className={styles.subStrong}>
               Let's build something great.
             </strong>
