@@ -1,4 +1,4 @@
-import styles from './Hero.module.css'
+import styles from "./Hero.module.css";
 
 export default function Hero({ onContactClick }) {
   return (
@@ -26,9 +26,13 @@ export default function Hero({ onContactClick }) {
           </h1>
 
           <p className={styles.sub}>
-            Fullstack engineer crafting high-performance web apps, SaaS products,
-            and digital experiences for global teams.{' '}
-            <strong className={styles.subStrong}>Let's build something great.</strong>
+            Fullstack engineer crafting high-performance web apps, SaaS
+            products, and digital experiences for global teams with extream
+            passion in <h2>Data science and Machine Learning </h2>and highly
+            adaptive to any technology.{" "}
+            <strong className={styles.subStrong}>
+              Let's build something great.
+            </strong>
           </p>
 
           <div className={styles.actions}>
@@ -42,11 +46,15 @@ export default function Hero({ onContactClick }) {
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <div className={styles.statNum}>4<span className={styles.statPlus}>+</span></div>
+              <div className={styles.statNum}>
+                4<span className={styles.statPlus}>+</span>
+              </div>
               <div className={styles.statLabel}>Projects Shipped</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNum}>3<span className={styles.statPlus}>+</span></div>
+              <div className={styles.statNum}>
+                3<span className={styles.statPlus}>+</span>
+              </div>
               <div className={styles.statLabel}>Years Building</div>
             </div>
             <div className={styles.stat}>
@@ -64,25 +72,26 @@ export default function Hero({ onContactClick }) {
                 TM
                 <div className={styles.avatarRing} />
               </div>
+              git push -u origin main
               <div className={styles.avatarInfo}>
                 <div className={styles.avatarName}>Titus Munene</div>
-                <div className={styles.avatarRole}>// Fullstack Engineer</div>
+                <div className={styles.avatarRole}>// Software Engineer</div>
                 <div className={styles.avatarLocation}>📍 Nairobi, Kenya</div>
               </div>
             </div>
 
             <div className={`${styles.floatingTag} ${styles.ftag1}`}>
-              ⚡ React · Node · Mongo
+              ⚡ . Python . React · Node · Mongo
             </div>
             <div className={`${styles.floatingTag} ${styles.ftag2}`}>
-              ✅ Open to Remote
+              ✅ Open to fulltime and Remote
             </div>
             <div className={`${styles.floatingTag} ${styles.ftag3}`}>
-              🚀 MERN Stack
+              🚀 MERN Stack and Data Analysis
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

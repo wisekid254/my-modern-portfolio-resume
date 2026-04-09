@@ -1,32 +1,39 @@
-import { useState } from 'react'
-import { CONTACT_METHODS } from '../../data'
-import styles from './Contact.module.css'
+import { useState } from "react";
+import { CONTACT_METHODS } from "../../data";
+import styles from "./Contact.module.css";
 
 export default function Contact({ contactRef }) {
-  const [form, setForm]     = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = () => {
-    if (!form.name || !form.email || !form.message) return
-    setStatus('sending')
+    if (!form.name || !form.email || !form.message) return;
+    setStatus("sending");
     // Simulate async send — replace with real API call (EmailJS, Resend, etc.)
     setTimeout(() => {
-      setStatus('sent')
-      setForm({ name: '', email: '', subject: '', message: '' })
-      setTimeout(() => setStatus('idle'), 4000)
-    }, 1200)
-  }
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    }, 1200);
+  };
 
   return (
     <section className="section-wrap reveal" id="contact" ref={contactRef}>
       {/* Availability banner */}
       <div className={styles.banner}>
         <div>
-          <div className="section-label" style={{ marginBottom: '6px' }}>Availability</div>
+          <div className="section-label" style={{ marginBottom: "6px" }}>
+            Availability
+          </div>
           <p className={styles.bannerText}>
             <strong>Open to remote opportunities</strong> — freelance projects,
             contract roles, and full-time positions with global companies.
@@ -39,7 +46,11 @@ export default function Contact({ contactRef }) {
       </div>
 
       <div className="section-label">Contact</div>
-      <div className="section-title">Let's Build<br />Together</div>
+      <div className="section-title">
+        Let's Build
+        <br />
+        Together
+      </div>
       <p className="section-sub">
         Have a project in mind? Let's talk. I typically respond within 24 hours.
       </p>
@@ -70,7 +81,7 @@ export default function Contact({ contactRef }) {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="John Carter"
+                placeholder="Your Name"
               />
             </div>
             <div className={styles.formGroup}>
@@ -81,7 +92,7 @@ export default function Contact({ contactRef }) {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="john@company.com"
+                placeholder="name@company.com"
               />
             </div>
           </div>
@@ -109,7 +120,7 @@ export default function Contact({ contactRef }) {
             />
           </div>
 
-          {status === 'sent' ? (
+          {status === "sent" ? (
             <div className={styles.successMsg}>
               ✓ Message sent! I'll get back to you within 24 hours.
             </div>
@@ -117,13 +128,13 @@ export default function Contact({ contactRef }) {
             <button
               className={styles.submit}
               onClick={handleSubmit}
-              disabled={status === 'sending'}
+              disabled={status === "sending"}
             >
-              {status === 'sending' ? 'Sending...' : 'Send Message →'}
+              {status === "sending" ? "Sending..." : "Send Message →"}
             </button>
           )}
         </div>
       </div>
     </section>
-  )
+  );
 }
