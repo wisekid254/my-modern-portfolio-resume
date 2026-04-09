@@ -1,9 +1,9 @@
 import styles from "./Hero.module.css";
+import titusPhoto from "../../assets/titus.jpg";
 
 export default function Hero({ onContactClick }) {
   return (
     <section className={styles.hero} id="hero">
-      {/* Background orbs */}
       <div className={`${styles.orb} ${styles.orb1}`} />
       <div className={`${styles.orb} ${styles.orb2}`} />
 
@@ -27,9 +27,7 @@ export default function Hero({ onContactClick }) {
 
           <p className={styles.sub}>
             Fullstack engineer crafting high-performance web apps, SaaS
-            products, and digital experiences for global teams with extream
-            passion in <h2>Data science and Machine Learning </h2>and highly
-            adaptive to any technology.{" "}
+            products, and digital experiences for global teams.{" "}
             <strong className={styles.subStrong}>
               Let's build something great.
             </strong>
@@ -64,30 +62,43 @@ export default function Hero({ onContactClick }) {
           </div>
         </div>
 
-        {/* ── Right: Visual card ── */}
+        {/* ── Right: Photo ── */}
         <div className={styles.visual}>
-          <div className={styles.cardStack}>
-            <div className={styles.avatarCard}>
-              <div className={styles.avatarCircle}>
-                TM
-                <div className={styles.avatarRing} />
+          <div className={styles.photoWrap}>
+            <div className={styles.ringOuter} />
+            <div className={styles.ringInner} />
+            <div className={styles.photoGlow} />
+
+            <div className={styles.photoFrame}>
+              <img
+                src={titusPhoto}
+                alt="Titus Munene — Fullstack Engineer"
+                className={styles.photo}
+              />
+              <div className={styles.photoOverlay} />
+            </div>
+
+            {/* Name tag inside photo */}
+            <div className={styles.nameTag}>
+              <div>
+                <div className={styles.nameTagName}>Titus Munene</div>
+                <div className={styles.nameTagRole}>// Fullstack Engineer</div>
               </div>
-              git push -u origin main
-              <div className={styles.avatarInfo}>
-                <div className={styles.avatarName}>Titus Munene</div>
-                <div className={styles.avatarRole}>// Software Engineer</div>
-                <div className={styles.avatarLocation}>📍 Nairobi, Kenya</div>
+              <div className={styles.nameTagStatus}>
+                <span className={styles.nameTagDot} />
+                Open to work
               </div>
             </div>
 
-            <div className={`${styles.floatingTag} ${styles.ftag1}`}>
-              ⚡ . Python . React · Node · Mongo
+            {/* Floating chips */}
+            <div className={`${styles.chip} ${styles.chip1}`}>
+              ⚡ React · Node · Mongo
             </div>
-            <div className={`${styles.floatingTag} ${styles.ftag2}`}>
-              ✅ Open to fulltime and Remote
+            <div className={`${styles.chip} ${styles.chip2}`}>
+              ✅ Open to Remote
             </div>
-            <div className={`${styles.floatingTag} ${styles.ftag3}`}>
-              🚀 MERN Stack and Data Analysis
+            <div className={`${styles.chip} ${styles.chip3}`}>
+              🚀 MERN Stack
             </div>
           </div>
         </div>

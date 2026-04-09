@@ -41,7 +41,7 @@ export const PROJECTS = [
     badgeBg:  'rgba(51,170,255,0.15)',
     featured: true,
     emoji:    '🛒',
-    link:     'https://kiriswap.com',
+    link:     '#',
   },
   {
     title:    'Real Estate Web App',
@@ -53,7 +53,7 @@ export const PROJECTS = [
     badgeBg:  'rgba(167,139,250,0.15)',
     featured: false,
     emoji:    '🏡',
-    link:     '#',
+    link:     'https://github.com/wisekid254/',
   },
   {
     title:    'SaaS Invoice Reminder',
@@ -149,16 +149,16 @@ export const STACK_MARQUEE = [
 
 // ─── CONTACT METHODS ──────────────────────────────────────────────────────────
 export const CONTACT_METHODS = [
-  { icon: '✉️', label: 'Email',    value: 'titusmunene@email.com',          href: 'mailto:titusmunene@email.com' },
+  { icon: '✉️', label: 'Email',    value: 'titusmunene439@email.com',          href: 'mailto:titusmunene439@email.com' },
   { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/titusmunene',    href: 'https://linkedin.com/in/titusmunene' },
-  { icon: '🐙', label: 'GitHub',   value: 'github.com/titusmunene',         href: 'https://github.com/titusmunene' },
-  { icon: '🌍', label: 'Location', value: 'Nairobi, Kenya (Remote-ready)',   href: '#' },
+  { icon: '🐙', label: 'GitHub',   value: 'github.com/wisekid254',         href: 'https://github.com/wisekid254' },
+  { icon: '🌍', label: 'Location', value: 'Nairobi, Kenya (Remote and fulltime -ready)',   href: '#' },
 ]
 
 // ─── SOCIAL LINKS ─────────────────────────────────────────────────────────────
 export const SOCIALS = [
-  { label: 'GitHub',   icon: '⌥', href: 'https://github.com/titusmunene' },
+  { label: 'GitHub',   icon: '⌥', href: 'https://github.com/wisekid254' },
   { label: 'LinkedIn', icon: 'in', href: 'https://linkedin.com/in/titusmunene' },
-  { label: 'Twitter',  icon: '𝕏',  href: 'https://twitter.com/titusmunene' },
-  { label: 'Email',    icon: '✉',  href: 'mailto:titusmunene@email.com' },
+  { label: 'Twitter',  icon: '𝕏',  href: 'https://twitter.com/tituswisekid115' },
+  { label: 'Email',    icon: '✉',  href: 'mailto:titusmunene439@email.com' },
 ]

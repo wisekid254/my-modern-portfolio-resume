@@ -1,267 +1,387 @@
 .hero {
-  min-height:  100vh;
-  display:     flex;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-  padding:     140px 40px 80px;
-  position:    relative;
-  overflow:    hidden;
-  max-width:   100%;
+  padding: 140px 40px 80px;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-/* ── Background orbs ── */
+/* ── Orbs ── */
 .orb {
-  position:      absolute;
+  position: absolute;
   border-radius: 50%;
-  filter:        blur(100px);
+  filter: blur(100px);
   pointer-events: none;
 }
-
 .orb1 {
-  width:  600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(51, 170, 255, 0.12) 0%, transparent 70%);
-  top:  -100px;
-  left: -200px;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(
+    circle,
+    rgba(51, 170, 255, 0.13) 0%,
+    transparent 70%
+  );
+  top: -120px;
+  left: -220px;
 }
-
 .orb2 {
-  width:  500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.10) 0%, transparent 70%);
-  bottom: -100px;
-  right:  -100px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.11) 0%,
+    transparent 70%
+  );
+  bottom: -120px;
+  right: -120px;
 }
 
-/* ── Grid layout ── */
+/* ── Grid ── */
 .grid {
-  max-width:       var(--max);
-  margin:          0 auto;
-  width:           100%;
-  display:         grid;
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:             60px;
-  align-items:     center;
-  position:        relative;
-  z-index:         2;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Badge ── */
 .badge {
-  display:       inline-flex;
-  align-items:   center;
-  gap:           8px;
-  padding:       6px 14px 6px 8px;
-  border:        1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid var(--border);
   border-radius: 50px;
-  font-size:     12px;
-  font-weight:   500;
-  color:         var(--text-mid);
-  font-family:   var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mid);
+  font-family: var(--font-mono);
   margin-bottom: 28px;
-  background:    var(--bg-card);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
 }
-
 .badgeDot {
-  width:        7px;
-  height:       7px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background:   var(--green);
-  box-shadow:   0 0 8px var(--green);
-  animation:    pulse 2s infinite;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
 }
 
 /* ── Title ── */
 .title {
-  font-family:    var(--font-display);
-  font-size:      clamp(42px, 5.5vw, 76px);
-  font-weight:    800;
-  line-height:    1.0;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.5vw, 76px);
+  font-weight: 800;
+  line-height: 1;
   letter-spacing: -2.5px;
-  margin-bottom:  24px;
+  margin-bottom: 24px;
 }
-
-.titleAccent { color: var(--accent); }
-.titleDim    { color: var(--text-dim); }
+.titleAccent {
+  color: var(--accent);
+}
+.titleDim {
+  color: var(--text-dim);
+}
 
 /* ── Sub ── */
 .sub {
-  font-size:     17px;
-  color:         var(--text-mid);
-  line-height:   1.7;
-  max-width:     480px;
+  font-size: 17px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  max-width: 480px;
   margin-bottom: 40px;
-  font-weight:   300;
+  font-weight: 300;
 }
-
-.subStrong { color: var(--text); font-weight: 500; }
+.subStrong {
+  color: var(--text);
+  font-weight: 500;
+}
 
 /* ── Actions ── */
 .actions {
-  display:   flex;
-  gap:       16px;
+  display: flex;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 /* ── Stats ── */
 .stats {
-  display:       flex;
-  gap:           32px;
-  margin-top:    52px;
-  padding-top:   32px;
-  border-top:    1px solid var(--border);
+  display: flex;
+  gap: 32px;
+  margin-top: 52px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
 }
-
 .statNum {
-  font-family:    var(--font-display);
-  font-size:      30px;
-  font-weight:    800;
-  color:          var(--text);
-  line-height:    1;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
 }
-
-.statPlus { color: var(--accent); }
-
+.statPlus {
+  color: var(--accent);
+}
 .statLabel {
-  font-size:      12px;
-  color:          var(--text-dim);
-  margin-top:     4px;
-  font-weight:    400;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 
-/* ── Visual / Card ── */
+/* ─────────── PHOTO COLUMN ─────────── */
+
 .visual {
-  display:     flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cardStack {
+.photoWrap {
   position: relative;
-  width:    380px;
-  height:   420px;
+  width: 340px;
+  height: 460px;
 }
 
-.avatarCard {
-  position:        absolute;
-  inset:           0;
-  border:          1px solid var(--border);
-  border-radius:   24px;
-  background:      linear-gradient(135deg, rgba(51,170,255,0.06), rgba(167,139,250,0.04));
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  justify-content: center;
-  gap:             20px;
-  backdrop-filter: blur(10px);
-  overflow:        hidden;
+/* Decorative rings */
+.ringOuter {
+  position: absolute;
+  inset: -14px;
+  border: 1px dashed rgba(51, 170, 255, 0.22);
+  border-radius: 38px;
+  animation: spinSlow 25s linear infinite;
+  pointer-events: none;
+}
+.ringInner {
+  position: absolute;
+  inset: -5px;
+  border: 1px solid rgba(51, 170, 255, 0.09);
+  border-radius: 30px;
+  pointer-events: none;
 }
 
-.avatarCard::before {
-  content:    '';
-  position:   absolute;
-  top: 0; left: 0; right: 0;
-  height:     1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+/* Glow blob */
+.photoGlow {
+  position: absolute;
+  inset: 10px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 170, 255, 0.22),
+    rgba(167, 139, 250, 0.18)
+  );
+  filter: blur(28px);
+  z-index: 0;
 }
 
-/* ── Avatar circle ── */
-.avatarCircle {
-  width:        120px;
-  height:       120px;
-  border-radius: 50%;
-  background:   linear-gradient(135deg, var(--accent), var(--accent-2));
-  display:      flex;
-  align-items:  center;
-  justify-content: center;
-  font-family:  var(--font-display);
-  font-size:    44px;
-  font-weight:  800;
-  color:        var(--bg);
-  box-shadow:   0 0 40px rgba(51, 170, 255, 0.3);
-  position:     relative;
+/* Photo frame */
+.photoFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(51, 170, 255, 0.12),
+    0 32px 80px rgba(0, 0, 0, 0.55),
+    0 8px 24px rgba(51, 170, 255, 0.1);
+  z-index: 1;
 }
 
-.avatarRing {
-  position:      absolute;
-  inset:         -8px;
-  border-radius: 50%;
-  border:        1px dashed rgba(51, 170, 255, 0.3);
-  animation:     spin 20s linear infinite;
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photoFrame:hover .photo {
+  transform: scale(1.04);
 }
 
-/* ── Avatar info ── */
-.avatarInfo   { text-align: center; }
-
-.avatarName {
-  font-family:    var(--font-display);
-  font-size:      22px;
-  font-weight:    800;
-  letter-spacing: -0.5px;
-  margin-bottom:  4px;
+/* Fade overlay at bottom */
+.photoOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 16, 0.95) 0%,
+    rgba(8, 8, 16, 0.55) 40%,
+    transparent 100%
+  );
+  z-index: 2;
 }
 
-.avatarRole {
-  font-size:   13px;
-  color:       var(--accent);
-  font-family: var(--font-mono);
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.avatarLocation {
-  font-size: 12px;
-  color:     var(--text-dim);
-}
-
-/* ── Floating tags ── */
-.floatingTag {
-  position:        absolute;
-  padding:         8px 14px;
-  border:          1px solid var(--border);
-  border-radius:   10px;
-  background:      rgba(8, 8, 16, 0.9);
-  backdrop-filter: blur(10px);
-  font-size:       12px;
-  font-weight:     500;
-  color:           var(--text-mid);
-  font-family:     var(--font-mono);
-  white-space:     nowrap;
-}
-
-.ftag1 {
-  top:   20px;
-  right: -30px;
-  border-color: var(--accent-glow);
-  color:        var(--accent);
-}
-
-.ftag2 {
-  bottom: 80px;
-  left:   -40px;
-  border-color: rgba(52, 211, 153, 0.3);
-  color:        var(--green);
-}
-
-.ftag3 {
+/* Name tag */
+.nameTag {
+  position: absolute;
   bottom: 20px;
-  right:  -20px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+.nameTagName {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+.nameTagRole {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 3px;
+}
+.nameTagStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background: rgba(8, 8, 16, 0.72);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--green);
+  white-space: nowrap;
+}
+.nameTagDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+/* Floating chips */
+.chip {
+  position: absolute;
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(8, 8, 16, 0.88);
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-mid);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  z-index: 4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.chip1 {
+  top: -18px;
+  right: -38px;
+  border-color: rgba(51, 170, 255, 0.25);
+  color: var(--accent);
+  animation: floatA 4s ease-in-out infinite;
+}
+.chip2 {
+  bottom: 110px;
+  left: -48px;
+  border-color: rgba(52, 211, 153, 0.25);
+  color: var(--green);
+  animation: floatB 5s ease-in-out infinite;
+}
+.chip3 {
+  bottom: 20px;
+  right: -42px;
+  animation: floatA 4.5s ease-in-out infinite reverse;
+}
+
+/* ── Keyframes ── */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+}
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes floatB {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .hero   { padding: 100px 20px 60px; }
-  .grid   { grid-template-columns: 1fr; gap: 40px; }
-  .visual { order: -1; }
-  .cardStack  { width: 280px; height: 320px; }
-  .avatarCircle { width: 90px; height: 90px; font-size: 34px; }
-  .floatingTag  { display: none; }
-  .title  { letter-spacing: -1.5px; }
-  .stats  { gap: 20px; }
+  .hero {
+    padding: 100px 20px 60px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .visual {
+    order: -1;
+  }
+  .photoWrap {
+    width: 260px;
+    height: 350px;
+  }
+  .chip,
+  .ringOuter {
+    display: none;
+  }
+  .title {
+    letter-spacing: -1.5px;
+  }
+  .stats {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  .actions { flex-direction: column; }
+  .actions {
+    flex-direction: column;
+  }
 }
